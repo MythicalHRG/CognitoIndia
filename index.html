@@ -13,242 +13,267 @@
       --text-light: #dfe7f2;
       --text-muted: #8a94a7;
       --accent-color: #00e3aa;
-      --btn-dark: #222;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--bg-dark) url('https://www.transparenttextures.com/patterns/stardust.png');
-      background-attachment: fixed;
-      color: var(--text-light);
-    }
-    header {
-      text-align: center;
-      padding: 3rem 1rem;
-    }
-    #typingEffect {
-      font-size: 2rem;
-      font-weight: bold;
-      color: var(--accent-color);
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid var(--accent-color);
-      animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
-    }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-    @keyframes blink {
-      from, to { border-color: transparent }
-      50% { border-color: var(--accent-color); }
-    }
-    a {
-      color: var(--accent-color);
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    h2, h3 {
-      font-family: 'Montserrat', sans-serif;
-      color: var(--text-light);
-    }
-    .content-container {
-      max-width: 1300px;
-      margin: auto;
-      padding: 2rem;
-    }
-    .front-blog-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-    }
-    .btn-Fx {
-      padding: 10px 18px;
-      background-color: var(--btn-dark);
-      color: var(--text-light);
-      border-radius: 8px;
-      font-weight: bold;
-      border: 2px solid var(--accent-color);
-      transition: background-color 0.4s ease, transform 0.3s;
-    }
-    .btn-Fx:hover {
-      background-color: var(--accent-color);
-      color: #000;
-      transform: scale(1.05);
-    }
-    .front-blog-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    .article-blog {
-      background: var(--bg-card);
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      transform-style: preserve-3d;
-    }
-    .article-blog:hover {
-      transform: rotateY(1deg) translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-    }
-    .article__thumbnail img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      display: block;
-    }
-    .article__body {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex: 1;
-    }
-    .article__excerpt p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin: 0.8rem 0;
-      line-height: 1.5rem;
-    }
-    .article__footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-    .footer__readmore {
-      font-weight: bold;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .footer__readmore:hover {
-      color: var(--accent-color);
-    }
-    #loadMore {
-      display: block;
-      margin: 3rem auto;
-      padding: 12px 22px;
-      border-radius: 50%;
-      background: var(--accent-color);
-      border: none;
-      cursor: pointer;
-      font-size: 1.2rem;
-      color: #000;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-      transition: background 0.3s, transform 0.3s;
-    }
-    #loadMore:hover {
-      background: #00c291;
-      transform: scale(1.1);
-    }
-    footer {
-      background: #111;
-      color: #ccc;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
-    }
-    footer a {
-      margin: 0 10px;
-      color: var(--accent-color);
-    }
-    @media (max-width: 600px) {
-      .front-blog-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
-    }
+    }* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-dark) url('https://www.transparenttextures.com/patterns/stardust.png');
+  background-attachment: fixed;
+  color: var(--text-light);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-light);
+}
+
+.hero-header {
+  padding: 2rem 1rem;
+  text-align: center;
+  max-width: 100%;
+  margin: auto;
+}
+
+.hero-header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  color: var(--accent-color);
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.3;
+}
+
+.content-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.front-blog-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.btn-Fx {
+  padding: 10px 18px;
+  background-color: #222;
+  color: var(--accent-color);
+  border-radius: 50px;
+  font-weight: bold;
+  border: 2px solid var(--accent-color);
+}
+
+.btn-Fx:hover {
+  background-color: var(--accent-color);
+  color: #000;
+}
+
+.front-blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.article-blog {
+  background: var(--bg-card);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.article-blog:hover {
+  transform: translateY(-8px) rotateX(2deg);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.article__thumbnail img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.article__body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.article__excerpt p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0.8rem 0;
+  line-height: 1.5rem;
+}
+
+.article__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer__readmore {
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer__readmore:hover {
+  color: var(--accent-color);
+}
+
+.footer {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.footer a {
+  margin: 0 0.5rem;
+  color: var(--text-muted);
+}
+
+.load-more {
+  margin: 3rem auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+.load-btn {
+  width: 60px;
+  height: 60px;
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.load-btn:hover {
+  background-color: #00c291;
+}
+
+@media (max-width: 600px) {
+  .front-blog-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
   </style>
 </head>
 <body>
-  <header>
-    <div id="typingEffect">CognitoIndia: A Try For Improvement in Indian Society</div>
+  <header class="hero-header">
+    <h1 id="typewriter"></h1>
   </header>  <section class="front-blog">
     <div class="content-container">
       <div class="front-blog-top">
         <h2><i class="bi bi-journal-text"></i> Latest Posts</h2>
         <a class="btn-Fx" href="#"><span>View Blog <i class="bi bi-arrow-right"></i></span></a>
       </div>
-      <div class="front-blog-list" id="blogList">
+      <div id="blog-list" class="front-blog-list">
         <!-- Cards will be injected by JS -->
       </div>
-      <button id="loadMore">+</button>
+      <div class="load-more">
+        <button class="load-btn" onclick="loadMoreCards()"><i class="bi bi-plus"></i></button>
+      </div>
     </div>
-  </section>  <footer>
-    <p>Connect with us:</p>
+  </section>  <footer class="footer">
+    <p>Follow us:</p>
     <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
     <a href="https://x.com" target="_blank"><i class="bi bi-twitter-x"></i></a>
     <a href="https://github.com" target="_blank"><i class="bi bi-github"></i></a>
   </footer>  <script>
+    const text = "CognitoIndia: A Try For Improvement in Indian Society";
+    const target = document.getElementById("typewriter");
+    let index = 0;
+    function typeWriter() {
+      if (index < text.length) {
+        target.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 80);
+      }
+    }
+    window.addEventListener("load", typeWriter);
+
     const posts = [
       {
         title: "Poem on India (1)",
-        link: "https://cogitoindia.blogspot.com/2025/06/poem-on-india-1.html",
-        image: "https://media.istockphoto.com/id/1356149389/photo/young-woman-doing-a-stop-sign-with-her-hand.jpg?s=612x612&w=0&k=20&c=ryKC-KpImGuCUrpF6WEjJSfauFkhvZUvqVgSrFyjYT8=",
         date: "June 5, 2025",
-        description: "I come from two Indias. One where we worship women during the day and gang-rape them at night. A brutally honest poetic lens on contradictions..."
+        excerpt: "I come from two Indias. One where we worship women during the day and gang-rape them at night. A brutally honest poetic lens...",
+        img: "https://media.istockphoto.com/id/1356149389/photo/young-woman-doing-a-stop-sign-with-her-hand.jpg?s=612x612&w=0&k=20&c=ryKC-KpImGuCUrpF6WEjJSfauFkhvZUvqVgSrFyjYT8=",
+        link: "https://cogitoindia.blogspot.com/2025/06/poem-on-india-1.html"
       },
       {
         title: "Research on Death Cases in India",
-        link: "https://jmp.sh/EykAsAJd",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyCxcbTvL6UEilp2_5gp_n7TFRqZb5JcCGPw&s",
         date: "June 12, 2025",
-        description: "A harsh, data-backed research exposing India's rising death toll linked to rape and sexual assault cases—unveiling systemic failures, societal silence..."
+        excerpt: "A harsh, data-backed research exposing India's rising death toll linked to rape and sexual assault cases...",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyCxcbTvL6UEilp2_5gp_n7TFRqZb5JcCGPw&s",
+        link: "https://jmp.sh/EykAsAJd"
       },
-      // You can add 50+ similar template cards here...
+      // Add 50+ more cards here...
     ];
 
-    let currentCount = 0;
-    const step = 5;
+    let visiblePosts = 0;
+    const cardsPerClick = 5;
 
-    function loadCards() {
-      const list = document.getElementById("blogList");
-      const end = Math.min(currentCount + step, posts.length);
-
-      for (let i = currentCount; i < end; i++) {
+    function loadMoreCards() {
+      const container = document.getElementById("blog-list");
+      const nextPosts = posts.slice(visiblePosts, visiblePosts + cardsPerClick);
+      nextPosts.forEach(post => {
         const card = document.createElement("a");
         card.className = "article-blog";
-        card.href = posts[i].link;
+        card.href = post.link;
         card.innerHTML = `
           <div class="article__thumbnail">
-            <img src="${posts[i].image}" alt="${posts[i].title}">
+            <img src="${post.img}" alt="${post.title}">
           </div>
           <div class="article__body">
-            <h3>${posts[i].title}</h3>
+            <h3>${post.title}</h3>
             <div class="article__excerpt">
-              <p>${posts[i].description}</p>
+              <p>${post.excerpt}</p>
             </div>
             <footer class="article__footer">
-              <span>${posts[i].date}</span>
+              <span>${post.date}</span>
               <div class="footer__readmore">
                 <span>Read more</span><i class="bi bi-arrow-right"></i>
               </div>
             </footer>
-          </div>
-        `;
-        list.appendChild(card);
-      }
-      currentCount += step;
-      if (currentCount >= posts.length) {
-        document.getElementById("loadMore").style.display = 'none';
-      }
+          </div>`;
+        container.appendChild(card);
+      });
+      visiblePosts += cardsPerClick;
     }
 
-    document.getElementById("loadMore").addEventListener("click", loadCards);
-    window.onload = loadCards;
+    window.onload = () => {
+      loadMoreCards();
+    };
   </script></body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>CognitoIndia: A Try Towards Improvement of Society of INDIA</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -23,6 +23,11 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: var(--bg-dark) url('https://www.transparenttextures.com/patterns/stardust.png');
@@ -30,26 +35,24 @@
       color: var(--text-light);
     }
 
+    .content-container {
+      max-width: 1300px;
+      margin: auto;
+      padding: 1.5rem;
+    }
+
     h1.page-title {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bold;
-      line-height: 1.3;
-      margin-bottom: 2rem;
-      text-wrap: balance;
+      margin-bottom: 1.5rem;
       word-break: break-word;
+      line-height: 1.4;
     }
 
     @media (max-width: 600px) {
       h1.page-title {
-        font-size: 1.7rem;
-        text-align: left;
+        font-size: 1.5rem;
       }
-    }
-
-    .content-container {
-      max-width: 1300px;
-      margin: auto;
-      padding: 2rem;
     }
 
     .front-blog-top {
@@ -77,8 +80,8 @@
 
     .front-blog-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
 
     .article-blog {
@@ -89,34 +92,38 @@
       display: flex;
       flex-direction: column;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
-      transform-style: preserve-3d;
     }
 
     .article-blog:hover {
-      transform: translateY(-8px) rotateX(2deg) rotateY(2deg);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
     }
 
     .article__thumbnail img {
       width: 100%;
       height: auto;
-      object-fit: cover;
       display: block;
     }
 
     .article__body {
-      padding: 1.5rem;
+      padding: 1rem;
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      flex: 1;
+    }
+
+    .article__body h3 {
+      margin-bottom: 0.6rem;
+      font-size: 1.2rem;
+      color: var(--text-light);
     }
 
     .article__excerpt p {
       font-size: 0.95rem;
       color: var(--text-muted);
-      margin: 0.8rem 0;
-      line-height: 1.5rem;
+      margin: 0.6rem 0 1rem;
+      line-height: 1.5;
     }
 
     .article__footer {
@@ -140,22 +147,21 @@
     }
 
     .load-more {
-      margin: 3rem auto;
-      display: flex;
-      justify-content: center;
+      text-align: center;
+      margin: 2rem auto;
     }
 
     .load-btn {
-      width: 60px;
-      height: 60px;
+      width: 55px;
+      height: 55px;
       border-radius: 50%;
       background-color: var(--accent-color);
       color: #000;
+      font-size: 1.8rem;
       border: none;
-      font-size: 1.5rem;
       cursor: pointer;
-      box-shadow: 0 0 20px rgba(0, 255, 170, 0.3);
-      transition: background 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
+      transition: background-color 0.3s ease;
     }
 
     .load-btn:hover {
@@ -163,8 +169,8 @@
     }
 
     footer {
-      margin-top: 4rem;
-      padding: 2rem;
+      margin-top: 3rem;
+      padding: 1.5rem;
       background-color: #111;
       text-align: center;
       color: var(--text-muted);
@@ -173,11 +179,12 @@
     footer a {
       color: var(--accent-color);
       margin: 0 10px;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
   </style>
 </head>
 <body>
+
   <section class="front-blog">
     <div class="content-container">
       <h1 class="page-title">CognitoIndia: A Try for Improvement in Indian Society</h1>
@@ -186,7 +193,7 @@
         <a class="btn-Fx" href="#"><span>View Blog <i class="bi bi-arrow-right"></i></span></a>
       </div>
       <div class="front-blog-list" id="blog-list">
-        <!-- Initial 5 cards -->
+        <!-- Blog Card 1 -->
         <a class="article-blog" href="https://cogitoindia.blogspot.com/2025/06/poem-on-india-1.html">
           <div class="article__thumbnail">
             <img src="https://media.istockphoto.com/id/1356149389/photo/young-woman-doing-a-stop-sign-with-her-hand.jpg?s=612x612" alt="Poem on India">
@@ -205,6 +212,7 @@
           </div>
         </a>
 
+        <!-- Blog Card 2 -->
         <a class="article-blog" href="https://jmp.sh/EykAsAJd">
           <div class="article__thumbnail">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyCxcbTvL6UEilp2_5gp_n7TFRqZb5JcCGPw&s" alt="Research on Death Cases">
@@ -212,7 +220,7 @@
           <div class="article__body">
             <h3>Research on Death Cases in India</h3>
             <div class="article__excerpt">
-              <p>A harsh, data-backed research exposing India's rising death toll linked to rape and sexual assault cases—unveiling systemic failures, societal silence...</p>
+              <p>A harsh, data-backed research exposing India’s rising death toll linked to rape and sexual assault—unveiling systemic failures, societal silence...</p>
             </div>
             <footer class="article__footer">
               <span>June 12, 2025</span>
@@ -239,7 +247,6 @@
 
   <script>
     const blogList = document.getElementById('blog-list');
-
     const templateCard = `
       <a class="article-blog" href="#">
         <div class="article__thumbnail">
@@ -260,14 +267,12 @@
       </a>
     `;
 
-    let loaded = 2;
-
     function loadMoreCards() {
       for (let i = 0; i < 15; i++) {
         blogList.innerHTML += templateCard;
       }
-      loaded += 15;
     }
   </script>
+
 </body>
 </html>

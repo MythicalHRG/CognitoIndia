@@ -7,62 +7,39 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
     :root {
-      --primary-color: #3e66f9;
-      --gray-dark-color: #343a40;
-      --medium-contrast-color: #4d515e;
-      --heading-color: #050c2a;
-      --main-bg-color: #f2f5f7;
-      --header-bg-color: #fff;
-      --content-box-bg: #fff;
-      --shadow-button: 0px 18px 20px rgb(153 172 243 / 8%), 0px 10px 14px rgb(178 187 207 / 6%), 0px 8px 9px rgb(213 213 213 / 4%);
-      --image-hover-bg-2: rgb(255 255 255 / 60%);
-      --border-color: #dee2e6;
-      --br-xl: 0.6rem;
-      --max-width: 1380px;
-    }body {
-  font-family: "Inter", "Open Sans", "Roboto", "Helvetica", sans-serif;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--gray-dark-color);
-  background-color: var(--main-bg-color);
+      --primary-color: #3e8ef7;
+      --bg-dark: #0e1015;
+      --bg-card: #1a1c23;
+      --text-light: #dfe7f2;
+      --text-muted: #8a94a7;
+      --accent-color: #00e3aa;
+    }* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-dark) url('https://www.transparenttextures.com/patterns/stardust.png');
+  background-attachment: fixed;
+  color: var(--text-light);
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--accent-color);
   text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
-h2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.8rem;
-  color: var(--heading-color);
-}
-
-.btn-Fx {
-  position: relative;
-  padding: 10px 16px;
-  font-size: 1rem;
-  font-weight: 700;
-  background-color: var(--primary-color);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  box-shadow: var(--shadow-button);
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.btn-Fx:hover {
-  background-color: #2b4fd1;
-  transform: translateY(-2px);
+h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-light);
 }
 
 .content-container {
-  max-width: var(--max-width);
-  margin: 0 auto;
+  max-width: 1300px;
+  margin: auto;
   padding: 2rem;
 }
 
@@ -70,7 +47,20 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   margin-bottom: 2rem;
+}
+
+.btn-Fx {
+  padding: 10px 18px;
+  background-color: var(--accent-color);
+  color: #000;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.btn-Fx:hover {
+  background-color: #00c291;
 }
 
 .front-blog-list {
@@ -80,48 +70,40 @@ h2 {
 }
 
 .article-blog {
+  background: var(--bg-card);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
-  background-color: var(--content-box-bg);
-  border-radius: var(--br-xl);
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .article-blog:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
 
-.article__thumbnail {
-  background-color: #000;
-  aspect-ratio: 16 / 9;
-  background-size: cover;
-  background-position: center;
+.article__thumbnail img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
 }
 
 .article__body {
-  padding: 1.2rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 180px;
-}
-
-.article__title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--heading-color);
+  flex: 1;
 }
 
 .article__excerpt p {
   font-size: 0.95rem;
-  color: var(--medium-contrast-color);
-  line-height: 1.5;
-  margin-bottom: 1rem;
-  opacity: 0.85;
+  color: var(--text-muted);
+  margin: 0.8rem 0;
+  line-height: 1.5rem;
 }
 
 .article__footer {
@@ -129,16 +111,27 @@ h2 {
   justify-content: space-between;
   align-items: center;
   font-size: 0.85rem;
-  color: var(--gray-dark-color);
+  color: var(--text-muted);
 }
 
-.footer__readmore-text {
-  font-weight: 600;
+.footer__readmore {
+  font-weight: bold;
   text-transform: uppercase;
-  font-size: 0.75rem;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 4px;
+}
+
+.footer__readmore:hover {
+  color: var(--accent-color);
+}
+
+@media (max-width: 600px) {
+  .front-blog-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
 }
 
   </style>
@@ -147,32 +140,43 @@ h2 {
   <section class="front-blog">
     <div class="content-container">
       <div class="front-blog-top">
-        <h2 class="front-blog-title dec-title"><i class="bi bi-journal-text"></i> Latest Posts</h2>
-        <a class="btn-Fx" href="#">View Blog <i class="bi bi-arrow-right"></i></a>
+        <h2><i class="bi bi-journal-text"></i> Latest Posts</h2>
+        <a class="btn-Fx" href="#"><span>View Blog <i class="bi bi-arrow-right"></i></span></a>
+      </div><div class="front-blog-list">
+    <!-- Card 1 -->
+    <a class="article-blog" href="https://cogitoindia.blogspot.com/2025/06/poem-on-india-1.html">
+      <div class="article__thumbnail">
+        <img src="https://media.istockphoto.com/id/1356149389/photo/young-woman-doing-a-stop-sign-with-her-hand.jpg?s=612x612&w=0&k=20&c=ryKC-KpImGuCUrpF6WEjJSfauFkhvZUvqVgSrFyjYT8=" alt="Poem on India">
       </div>
-      <div class="front-blog-list">
-        <a class="article-blog" href="https://cogitoindia.blogspot.com/2025/06/poem-on-india-1.html">
-          <div class="article__thumbnail" style="background-image: url('https://media.istockphoto.com/id/1356149389/photo/young-woman-doing-a-stop-sign-with-her-hand.jpg?s=612x612&w=0&k=20&c=ryKC-KpImGuCUrpF6WEjJSfauFkhvZUvqVgSrFyjYT8=');"></div>
-          <div class="article__body">
-            <h3 class="article__title">Poem on India (1)</h3>
-            <div class="article__excerpt">
-              <p>I come from two Indias. I come from an India where we worship women during the day, and gang-rape them at night...</p>
-            </div>
-            <footer class="article__footer">
-              <span class="article__date">June 5, 2025</span>
-              <span class="footer__readmore-text">Read more <i class="bi bi-arrow-right"></i></span>
-            </footer>
-          </div>
-        </a><a class="article-blog" href="https://jmp.sh/EykAsAJd">
-      <div class="article__thumbnail" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyCxcbTvL6UEilp2_5gp_n7TFRqZb5JcCGPw&s');"></div>
       <div class="article__body">
-        <h3 class="article__title">Research on Death Cases in India</h3>
+        <h3>Poem on India (1)</h3>
         <div class="article__excerpt">
-          <p>A harsh, data-backed research exposing India's rising death toll linked to rape and sexual assault cases...</p>
+          <p>I come from two Indias. One where we worship women during the day and gang-rape them at night. A brutally honest poetic lens on contradictions...</p>
         </div>
         <footer class="article__footer">
-          <span class="article__date">June 12, 2025</span>
-          <span class="footer__readmore-text">Read more <i class="bi bi-arrow-right"></i></span>
+          <span>June 5, 2025</span>
+          <div class="footer__readmore">
+            <span>Read more</span><i class="bi bi-arrow-right"></i>
+          </div>
+        </footer>
+      </div>
+    </a>
+
+    <!-- Card 2 -->
+    <a class="article-blog" href="https://jmp.sh/EykAsAJd">
+      <div class="article__thumbnail">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyCxcbTvL6UEilp2_5gp_n7TFRqZb5JcCGPw&s" alt="Research on Death Cases">
+      </div>
+      <div class="article__body">
+        <h3>Research on Death Cases in India</h3>
+        <div class="article__excerpt">
+          <p>A harsh, data-backed research exposing India's rising death toll linked to rape and sexual assault cases—unveiling systemic failures, societal silence...</p>
+        </div>
+        <footer class="article__footer">
+          <span>June 12, 2025</span>
+          <div class="footer__readmore">
+            <span>Read more</span><i class="bi bi-arrow-right"></i>
+          </div>
         </footer>
       </div>
     </a>

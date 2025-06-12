@@ -15,8 +15,7 @@
       --main-bg-color: #f2f5f7;
       --header-bg-color: #fff;
       --content-box-bg: #fff;
-      --shadow-button: 0px 18px 20px rgb(153 172 243 / 8%),
-        0px 10px 14px rgb(178 187 207 / 6%), 0px 8px 9px rgb(213 213 213 / 4%);
+      --shadow-button: 0px 18px 20px rgb(153 172 243 / 8%), 0px 10px 14px rgb(178 187 207 / 6%), 0px 8px 9px rgb(213 213 213 / 4%);
       --image-hover-bg-2: rgb(255 255 255 / 60%);
       --border-color: #dee2e6;
       --br-xl: 0.6rem;
@@ -44,11 +43,6 @@
       background-color: var(--main-bg-color);
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      width: 100%;
     }
 
     *:not(dialog) {
@@ -60,10 +54,6 @@
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s ease;
-    }
-
-    p {
-      margin: 0 0 1rem;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -139,25 +129,13 @@
 
     .content-container {
       width: 100%;
-      position: relative;
       max-width: var(--max-width);
       margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      padding: 0 3rem;
+      padding: 3rem 2rem;
     }
 
     .front-blog {
       width: 100%;
-    }
-
-    .front-blog-list {
-      display: flex;
-      justify-content: space-between;
-      gap: 2rem;
-      align-items: stretch;
-      flex-wrap: wrap;
     }
 
     .front-blog-top {
@@ -177,14 +155,18 @@
       padding: 8px 15px;
     }
 
+    .front-blog-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
     .article-blog {
       color: var(--medium-contrast-color);
       position: relative;
-      width: 100%;
-      max-width: 600px;
       height: 330px;
       border-radius: var(--br-xl);
-      flex: 1 1 calc(50% - 1rem);
+      width: 100%;
     }
 
     .article__thumbnail {
@@ -282,24 +264,6 @@
     .article-blog:hover .article__excerpt {
       opacity: 1;
     }
-
-    @media (max-width: 700px) {
-      body {
-        margin: 5rem 0;
-      }
-      .front-blog-list {
-        flex-direction: column;
-      }
-      .article__thumbnail {
-        height: 220px;
-        background-position: bottom;
-      }
-      .article__body {
-        position: absolute;
-        background-color: var(--image-hover-bg-2);
-        backdrop-filter: blur(50px);
-      }
-    }
   </style>
 </head>
 <body>
@@ -310,7 +274,7 @@
         <a class="btn-Fx" href="#"><span>View Blog <i class="bi bi-arrow-right"></i></span></a>
       </div>
       <div class="front-blog-list">
-        <!-- Poem on India -->
+        <!-- Card 1 -->
         <a class="front-blog-item article-blog" href="https://cogitoindia.blogspot.com/2025/06/poem-on-india-1.html">
           <div class="front-blog-item-thumbnail article__thumbnail" style="background-image: url('https://media.istockphoto.com/id/1356149389/photo/young-woman-doing-a-stop-sign-with-her-hand.jpg?s=612x612&w=0&k=20&c=ryKC-KpImGuCUrpF6WEjJSfauFkhvZUvqVgSrFyjYT8=')"></div>
           <div class="front-blog-item-content article__body">
@@ -328,7 +292,7 @@
           </div>
         </a>
 
-        <!-- Research on Death Cases -->
+        <!-- Card 2 -->
         <a class="front-blog-item article-blog" href="https://jmp.sh/EykAsAJd">
           <div class="front-blog-item-thumbnail article__thumbnail" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyCxcbTvL6UEilp2_5gp_n7TFRqZb5JcCGPw&s')"></div>
           <div class="front-blog-item-content article__body">
@@ -348,27 +312,5 @@
       </div>
     </div>
   </section>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const blogItems = document.querySelectorAll(".front-blog-item");
-
-      blogItems.forEach(item => {
-        item.addEventListener("mouseenter", () => {
-          blogItems.forEach(otherItem => {
-            if (otherItem !== item) {
-              otherItem.querySelector(".article__thumbnail").style.opacity = "0.5";
-            }
-          });
-        });
-
-        item.addEventListener("mouseleave", () => {
-          blogItems.forEach(otherItem => {
-            otherItem.querySelector(".article__thumbnail").style.opacity = "1";
-          });
-        });
-      });
-    });
-  </script>
 </body>
 </html>

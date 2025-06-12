@@ -7,210 +7,178 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
     :root {
-      --primary-color: #3e8ef7;
-      --bg-dark: #0e1015;
-      --bg-card: #1a1c23;
-      --text-light: #dfe7f2;
-      --text-muted: #8a94a7;
-      --accent-color: #00e3aa;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--bg-dark) url('https://www.transparenttextures.com/patterns/stardust.png');
-      background-attachment: fixed;
-      color: var(--text-light);
-    }
-    a {
-      color: var(--accent-color);
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    h2, h3 {
-      font-family: 'Montserrat', sans-serif;
-      color: var(--text-light);
-    }
-    .content-container {
-      max-width: 1300px;
-      margin: auto;
-      padding: 2rem;
-    }
-    .front-blog-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-    }
-    .btn-Fx {
-      padding: 10px 18px;
-      background-color: #2a2a2a;
-      color: #fff;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    .btn-Fx:hover {
-      background-color: #444;
-    }
-    .front-blog-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    .article-blog {
-      background: var(--bg-card);
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .article-blog:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-    }
-    .article__thumbnail img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      display: block;
-    }
-    .article__body {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex: 1;
-    }
-    .article__excerpt p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin: 0.8rem 0;
-      line-height: 1.5rem;
-    }
-    .article__footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-    .footer__readmore {
-      font-weight: bold;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .footer__readmore:hover {
-      color: var(--accent-color);
-    }
-    @media (max-width: 600px) {
-      .front-blog-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
-    }
-    .categories, .search-bar {
-      margin-top: 2rem;
-      padding: 1rem;
-      background: var(--bg-card);
-      border-radius: 1rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-    .footer {
-      background: #1a1c23;
-      text-align: center;
-      padding: 1.5rem;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-    .footer a {
-      margin: 0 10px;
-      color: var(--text-muted);
-    }
-    .footer a:hover {
-      color: var(--accent-color);
-    }
-    #heading-animated {
-      font-size: 2rem;
-      text-align: center;
-      margin: 2rem 0;
-      border-right: .15em solid #00e3aa;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-    .load-more {
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .load-more button {
-      background: var(--bg-card);
-      color: var(--accent-color);
-      border: none;
-      padding: 10px 16px;
-      font-size: 1.5rem;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .load-more button:hover {
-      transform: scale(1.2);
-      background-color: #1f2129;
-    }
+      --primary-color: #3e66f9;
+      --gray-dark-color: #343a40;
+      --medium-contrast-color: #4d515e;
+      --heading-color: #050c2a;
+      --main-bg-color: #f2f5f7;
+      --header-bg-color: #fff;
+      --content-box-bg: #fff;
+      --shadow-button: 0px 18px 20px rgb(153 172 243 / 8%), 0px 10px 14px rgb(178 187 207 / 6%), 0px 8px 9px rgb(213 213 213 / 4%);
+      --image-hover-bg-2: rgb(255 255 255 / 60%);
+      --border-color: #dee2e6;
+      --br-xl: 0.6rem;
+      --max-width: 1380px;
+    }body {
+  font-family: "Inter", "Open Sans", "Roboto", "Helvetica", sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--gray-dark-color);
+  background-color: var(--main-bg-color);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  color: var(--heading-color);
+}
+
+.btn-Fx {
+  position: relative;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: var(--shadow-button);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-Fx:hover {
+  background-color: #2b4fd1;
+  transform: translateY(-2px);
+}
+
+.content-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.front-blog-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.front-blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.article-blog {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--content-box-bg);
+  border-radius: var(--br-xl);
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.article-blog:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.article__thumbnail {
+  background-color: #000;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+}
+
+.article__body {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 180px;
+}
+
+.article__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color);
+}
+
+.article__excerpt p {
+  font-size: 0.95rem;
+  color: var(--medium-contrast-color);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  opacity: 0.85;
+}
+
+.article__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--gray-dark-color);
+}
+
+.footer__readmore-text {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
   </style>
 </head>
 <body>
-  <h1 id="heading-animated"></h1>
   <section class="front-blog">
     <div class="content-container">
       <div class="front-blog-top">
-        <h2><i class="bi bi-journal-text"></i> Latest Posts</h2>
-        <a class="btn-Fx" href="#"><span>View Blog <i class="bi bi-arrow-right"></i></span></a>
-      </div>
-      <div class="search-bar">
-        <input type="text" placeholder="Search..." style="width: 100%; padding: 10px; border-radius: 6px; border: none;">
-      </div>
-      <div class="categories">
-        <h3>Categories</h3>
-        <ul>
-          <li><a href="#">Poems</a></li>
-          <li><a href="#">Research</a></li>
-          <li><a href="#">Opinions</a></li>
-          <li><a href="#">Reports</a></li>
-        </ul>
+        <h2 class="front-blog-title dec-title"><i class="bi bi-journal-text"></i> Latest Posts</h2>
+        <a class="btn-Fx" href="#">View Blog <i class="bi bi-arrow-right"></i></a>
       </div>
       <div class="front-blog-list">
-        <!-- Existing blog cards here -->
+        <a class="article-blog" href="https://cogitoindia.blogspot.com/2025/06/poem-on-india-1.html">
+          <div class="article__thumbnail" style="background-image: url('https://media.istockphoto.com/id/1356149389/photo/young-woman-doing-a-stop-sign-with-her-hand.jpg?s=612x612&w=0&k=20&c=ryKC-KpImGuCUrpF6WEjJSfauFkhvZUvqVgSrFyjYT8=');"></div>
+          <div class="article__body">
+            <h3 class="article__title">Poem on India (1)</h3>
+            <div class="article__excerpt">
+              <p>I come from two Indias. I come from an India where we worship women during the day, and gang-rape them at night...</p>
+            </div>
+            <footer class="article__footer">
+              <span class="article__date">June 5, 2025</span>
+              <span class="footer__readmore-text">Read more <i class="bi bi-arrow-right"></i></span>
+            </footer>
+          </div>
+        </a><a class="article-blog" href="https://jmp.sh/EykAsAJd">
+      <div class="article__thumbnail" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyCxcbTvL6UEilp2_5gp_n7TFRqZb5JcCGPw&s');"></div>
+      <div class="article__body">
+        <h3 class="article__title">Research on Death Cases in India</h3>
+        <div class="article__excerpt">
+          <p>A harsh, data-backed research exposing India's rising death toll linked to rape and sexual assault cases...</p>
+        </div>
+        <footer class="article__footer">
+          <span class="article__date">June 12, 2025</span>
+          <span class="footer__readmore-text">Read more <i class="bi bi-arrow-right"></i></span>
+        </footer>
       </div>
-      <div class="load-more">
-        <button><i class="bi bi-plus-circle"></i></button>
-      </div>
-    </div>
-  </section>
-  <div class="footer">
-    Follow us on:
-    <a href="#"><i class="bi bi-instagram"></i></a>
-    <a href="#"><i class="bi bi-twitter-x"></i></a>
-    <a href="#"><i class="bi bi-github"></i></a>
+    </a>
   </div>
-  <script>
-    const headingText = "CognitoIndia: A Try For Improvement in Indian Society";
-    let i = 0;
-    function typeWriter() {
-      if (i < headingText.length) {
-        document.getElementById("heading-animated").innerHTML += headingText.charAt(i);
-        i++;
-        setTimeout(typeWriter, 70);
-      }
-    }
-    window.onload = typeWriter;
-  </script>
+</div>
+
+  </section>
 </body>
 </html>

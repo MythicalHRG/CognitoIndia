@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,166 +20,297 @@
       --border-color: #dee2e6;
       --br-xl: 0.6rem;
       --max-width: 1380px;
-    }body {
-  font-family: "Inter", "Open Sans", "Roboto", "Helvetica", sans-serif;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--gray-dark-color);
-  background-color: var(--main-bg-color);
-  margin: 0;
-  padding: 0;
-}
+    }
 
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --gray-dark-color: #e5e5e5;
+        --main-bg-color: #0d111c;
+        --header-bg-color: #000;
+        --content-box-bg: #1e283c;
+        --shadow-button: none;
+        --image-hover-bg-2: rgb(22 32 70 / 37%);
+        --heading-color: #fff;
+        --medium-contrast-color: #8e94a9;
+      }
+    }
 
-h2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.8rem;
-  color: var(--heading-color);
-}
+    body {
+      font-family: "Inter", "Open Sans", "Roboto", "Helvetica", sans-serif;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--gray-dark-color);
+      background-color: var(--main-bg-color);
+      margin: 0;
+      padding: 0;
+    }
 
-.btn-Fx {
-  position: relative;
-  padding: 10px 16px;
-  font-size: 1rem;
-  font-weight: 700;
-  background-color: var(--primary-color);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  box-shadow: var(--shadow-button);
-  transition: background-color 0.3s, transform 0.2s;
-}
+    *:not(dialog) {
+      box-sizing: border-box;
+    }
 
-.btn-Fx:hover {
-  background-color: #2b4fd1;
-  transform: translateY(-2px);
-}
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
 
-.content-container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 2rem;
-}
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Montserrat", sans-serif;
+      color: var(--heading-color);
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.015em;
+      line-height: 1.4em;
+      font-weight: 400;
+      text-wrap: balance;
+    }
 
-.front-blog-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-}
+    .btn-Fx {
+      overflow: hidden;
+      color: var(--heading-color);
+      display: inline-block;
+      position: relative;
+      font-size: 1rem;
+      padding: 10px 16px;
+      background-color: var(--content-box-bg);
+      border-radius: 5px;
+      box-shadow: var(--shadow-button);
+    }
 
-.front-blog-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
+    .btn-Fx span {
+      display: block;
+      position: relative;
+      z-index: 10;
+      font-weight: 700;
+    }
 
-.article-blog {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--content-box-bg);
-  border-radius: var(--br-xl);
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+    .btn-Fx:hover {
+      color: #fff;
+    }
 
-.article-blog:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
+    .btn-Fx:before {
+      content: "";
+      position: absolute;
+      background-color: var(--primary-color);
+      width: 120%;
+      height: 0;
+      padding-bottom: 120%;
+      top: -110%;
+      left: -10%;
+      border-radius: 50%;
+      transform: translate3d(0, 68%, 0) scale3d(0, 0, 0);
+    }
 
-.article__thumbnail {
-  background-color: #000;
-  aspect-ratio: 16 / 9;
-  background-size: cover;
-  background-position: center;
-}
+    .btn-Fx:hover:before {
+      transform: translateZ(0) scaleZ(1);
+      transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+    }
 
-.article__body {
-  padding: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 180px;
-}
+    .btn-Fx:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--primary-color);
+      transform: translate3d(0, -101%, 0);
+      transition: transform 0.4s;
+    }
 
-.article__title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--heading-color);
-}
+    .btn-Fx:hover:after {
+      transform: translateZ(0);
+      transition-duration: 0.05s;
+      transition-delay: 0.4s;
+      transition-timing-function: linear;
+    }
 
-.article__excerpt p {
-  font-size: 0.95rem;
-  color: var(--medium-contrast-color);
-  line-height: 1.5;
-  margin-bottom: 1rem;
-  opacity: 0.85;
-}
+    .content-container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
 
-.article__footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.85rem;
-  color: var(--gray-dark-color);
-}
+    .front-blog {
+      width: 100%;
+    }
 
-.footer__readmore-text {
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
+    .front-blog-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
 
+    .front-blog-top .dec-title {
+      color: var(--medium-contrast-color);
+    }
+
+    .front-blog-top .btn-Fx {
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      padding: 8px 15px;
+    }
+
+    .front-blog-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .article-blog {
+      color: var(--medium-contrast-color);
+      position: relative;
+      height: 330px;
+      border-radius: var(--br-xl);
+      width: 100%;
+    }
+
+    .article__thumbnail {
+      position: relative;
+      height: calc(100% - 140px);
+      width: 100%;
+      background-size: cover;
+      background-position-x: center;
+      background-color: #2151b1;
+      background-blend-mode: lighten;
+      opacity: 1;
+      transition: all 0.6s ease-out;
+      border-radius: inherit;
+      box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.2);
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .article-blog:hover .article__thumbnail {
+      opacity: 1;
+      background-color: transparent;
+    }
+
+    .article__body {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      width: 100%;
+      height: 148px;
+      padding: 20px;
+      background-color: var(--content-box-bg);
+      transition: all 0.4s;
+      z-index: 2;
+      overflow: hidden;
+      border-radius: inherit;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.2);
+    }
+
+    .article-blog:hover .article__body {
+      background-color: var(--image-hover-bg-2);
+      backdrop-filter: blur(50px);
+      height: 250px;
+    }
+
+    .article__excerpt {
+      opacity: 0;
+      transition: opacity 0.4s;
+      line-height: 1.6;
+      font-size: 14px;
+      color: var(--heading-color);
+    }
+
+    .article__footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0 20px 20px 20px;
+      line-height: inherit;
+      height: 42px;
+      width: 100%;
+    }
+
+    .footer__readmore {
+      position: relative;
+      display: block;
+      height: 22px;
+      float: right;
+      overflow: hidden;
+    }
+
+    .footer__readmore-text {
+      display: inline-block;
+      padding-right: 5px;
+      transform: translateY(30px);
+      color: inherit;
+      vertical-align: middle;
+      transition: all 0.4s;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .footer__readmore-arrow {
+      display: inline-block;
+      height: 100%;
+    }
+
+    .article-blog:hover .footer__readmore-text {
+      transform: translateY(-2px);
+    }
+
+    .article-blog:hover .article__excerpt {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
   <section class="front-blog">
     <div class="content-container">
       <div class="front-blog-top">
-        <h2 class="front-blog-title dec-title"><i class="bi bi-journal-text"></i> Latest Posts</h2>
-        <a class="btn-Fx" href="#">View Blog <i class="bi bi-arrow-right"></i></a>
+        <h2 class="front-blog-title dec-title"><span><i class="bi bi-journal-text"></i></span> Latest Posts</h2>
+        <a class="btn-Fx" href="#"><span>View Blog <i class="bi bi-arrow-right"></i></span></a>
       </div>
       <div class="front-blog-list">
-        <a class="article-blog" href="https://cogitoindia.blogspot.com/2025/06/poem-on-india-1.html">
-          <div class="article__thumbnail" style="background-image: url('https://media.istockphoto.com/id/1356149389/photo/young-woman-doing-a-stop-sign-with-her-hand.jpg?s=612x612&w=0&k=20&c=ryKC-KpImGuCUrpF6WEjJSfauFkhvZUvqVgSrFyjYT8=');"></div>
-          <div class="article__body">
+        <!-- Card 1 -->
+        <a class="front-blog-item article-blog" href="https://cogitoindia.blogspot.com/2025/06/poem-on-india-1.html">
+          <div class="front-blog-item-thumbnail article__thumbnail" style="background-image: url('https://media.istockphoto.com/id/1356149389/photo/young-woman-doing-a-stop-sign-with-her-hand.jpg?s=612x612&w=0&k=20&c=ryKC-KpImGuCUrpF6WEjJSfauFkhvZUvqVgSrFyjYT8=')"></div>
+          <div class="front-blog-item-content article__body">
             <h3 class="article__title">Poem on India (1)</h3>
             <div class="article__excerpt">
-              <p>I come from two Indias. I come from an India where we worship women during the day, and gang-rape them at night...</p>
+              <p>I come from two Indias. I come from an India where we worship women during the day, and gang-rape them at night. A brutally honest poetic lens on contradictions...</p>
             </div>
             <footer class="article__footer">
               <span class="article__date">June 5, 2025</span>
-              <span class="footer__readmore-text">Read more <i class="bi bi-arrow-right"></i></span>
+              <div class="footer__readmore">
+                <span class="footer__readmore-text">Read more</span>
+                <span class="footer__readmore-arrow"><i class="bi bi-arrow-right"></i></span>
+              </div>
             </footer>
           </div>
-        </a><a class="article-blog" href="https://jmp.sh/EykAsAJd">
-      <div class="article__thumbnail" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyCxcbTvL6UEilp2_5gp_n7TFRqZb5JcCGPw&s');"></div>
-      <div class="article__body">
-        <h3 class="article__title">Research on Death Cases in India</h3>
-        <div class="article__excerpt">
-          <p>A harsh, data-backed research exposing India's rising death toll linked to rape and sexual assault cases...</p>
-        </div>
-        <footer class="article__footer">
-          <span class="article__date">June 12, 2025</span>
-          <span class="footer__readmore-text">Read more <i class="bi bi-arrow-right"></i></span>
-        </footer>
-      </div>
-    </a>
-  </div>
-</div>
+        </a>
 
+        <!-- Card 2 -->
+        <a class="front-blog-item article-blog" href="https://jmp.sh/EykAsAJd">
+          <div class="front-blog-item-thumbnail article__thumbnail" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyCxcbTvL6UEilp2_5gp_n7TFRqZb5JcCGPw&s')"></div>
+          <div class="front-blog-item-content article__body">
+            <h3 class="article__title">Research on Death Cases in India</h3>
+            <div class="article__excerpt">
+              <p>A harsh, data-backed research exposing India's rising death toll linked to rape and sexual assault cases—unveiling systemic failures, societal silence, and the brutal reality behind over 50% of such fatalities across states....</p>
+            </div>
+            <footer class="article__footer">
+              <span class="article__date">June 12, 2025</span>
+              <div class="footer__readmore">
+                <span class="footer__readmore-text">Read more</span>
+                <span class="footer__readmore-arrow"><i class="bi bi-arrow-right"></i></span>
+              </div>
+            </footer>
+          </div>
+        </a>
+      </div>
+    </div>
   </section>
 </body>
 </html>

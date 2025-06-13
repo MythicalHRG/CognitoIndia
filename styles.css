@@ -15,6 +15,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
@@ -26,14 +27,13 @@ body {
 
 header {
   text-align: center;
-  padding: 3rem 1rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .mainHeading {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: bold;
-  word-break: break-word;
-  padding: 0 1rem;
+  line-height: 1.4;
 }
 
 .saffron { color: var(--saffron); }
@@ -41,41 +41,47 @@ header {
 .green { color: var(--green); }
 
 .search-bar {
+  margin-top: 1rem;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: flex-start;
-  padding: 1rem;
   max-width: 600px;
-  margin: 0 auto;
+  margin-inline: auto;
+  position: relative;
 }
 
-#searchBtn {
-  background-color: transparent;
-  border: none;
-  color: var(--accent-color);
-  font-size: 1.2rem;
-  cursor: pointer;
-  margin-right: 0.5rem;
-}
-
-#searchInput {
-  display: none;
-  background-color: var(--bg-card);
-  border: 1px solid var(--accent-color);
-  color: var(--text-light);
+.search-bar input {
   padding: 8px 12px;
+  border: none;
   border-radius: 5px;
   flex-grow: 1;
-  transition: width 0.3s ease;
-}
-
-#searchInput.show {
-  display: block;
-}
-
-h2, h3 {
-  font-family: 'Montserrat', sans-serif;
+  max-width: 0;
+  transition: max-width 0.5s ease;
+  opacity: 0;
+  background: #1e1e1e;
   color: var(--text-light);
+}
+
+.search-bar input::placeholder {
+  color: #aaa;
+}
+
+.search-bar button {
+  background: var(--accent-color);
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-bar:hover input {
+  max-width: 250px;
+  opacity: 1;
+}
+
+.search-bar button:hover {
+  background-color: #00c291;
 }
 
 .content-container {
@@ -122,10 +128,11 @@ h2, h3 {
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
 }
 
 .article-blog:hover {
-  transform: translateY(-5px);
+  transform: rotateY(1deg) translateY(-5px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
 
@@ -208,9 +215,5 @@ footer a {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-  }
-
-  .mainHeading {
-    font-size: 1.5rem;
   }
 }

@@ -13,261 +13,242 @@
       --text-light: #dfe7f2;
       --text-muted: #8a94a7;
       --accent-color: #00e3aa;
-      --btn-dark: #212529;
-    }* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--bg-dark) url('https://www.transparenttextures.com/patterns/stardust.png');
-  background-attachment: fixed;
-  color: var(--text-light);
-}
-
-a {
-  color: var(--accent-color);
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-h2, h3 {
-  font-family: 'Montserrat', sans-serif;
-  color: var(--text-light);
-}
-
-.content-container {
-  max-width: 1300px;
-  margin: auto;
-  padding: 2rem;
-  animation: fadeIn 1.5s ease-in;
-}
-
-.header-title {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  font-weight: bold;
-  color: var(--accent-color);
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid var(--accent-color);
-  width: fit-content;
-  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: var(--accent-color); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.front-blog-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-
-.btn-Fx {
-  padding: 10px 18px;
-  background-color: var(--btn-dark);
-  color: var(--text-light);
-  border-radius: 8px;
-  font-weight: bold;
-  border: 1px solid var(--accent-color);
-  transition: all 0.3s ease;
-}
-
-.btn-Fx:hover {
-  background-color: var(--accent-color);
-  color: #000;
-  transform: scale(1.05);
-}
-
-.front-blog-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.article-blog {
-  background: var(--bg-card);
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  perspective: 800px;
-  transform-style: preserve-3d;
-}
-
-.article-blog:hover {
-  transform: rotateY(3deg) scale(1.03);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-}
-
-.article__thumbnail img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.article-blog:hover .article__thumbnail img {
-  transform: scale(1.05);
-}
-
-.article__body {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-}
-
-.article__excerpt p {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  margin: 0.8rem 0;
-  line-height: 1.5rem;
-}
-
-.article__footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-.footer__readmore {
-  font-weight: bold;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.footer__readmore:hover {
-  color: var(--accent-color);
-}
-
-footer.site-footer {
-  margin-top: 4rem;
-  text-align: center;
-  padding: 2rem 0;
-  background-color: #111;
-  color: var(--text-muted);
-  animation: fadeIn 2s ease-in;
-}
-
-footer.site-footer a {
-  color: var(--accent-color);
-  margin: 0 1rem;
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-}
-
-footer.site-footer a:hover {
-  transform: scale(1.2);
-}
-
-@media (max-width: 600px) {
-  .front-blog-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-}
-
+      --btn-dark: #222;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-dark) url('https://www.transparenttextures.com/patterns/stardust.png');
+      background-attachment: fixed;
+      color: var(--text-light);
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    #typingEffect {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--accent-color);
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid var(--accent-color);
+      animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: var(--accent-color); }
+    }
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-light);
+    }
+    .content-container {
+      max-width: 1300px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .front-blog-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .btn-Fx {
+      padding: 10px 18px;
+      background-color: var(--btn-dark);
+      color: var(--text-light);
+      border-radius: 8px;
+      font-weight: bold;
+      border: 2px solid var(--accent-color);
+      transition: background-color 0.4s ease, transform 0.3s;
+    }
+    .btn-Fx:hover {
+      background-color: var(--accent-color);
+      color: #000;
+      transform: scale(1.05);
+    }
+    .front-blog-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .article-blog {
+      background: var(--bg-card);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+    }
+    .article-blog:hover {
+      transform: rotateY(1deg) translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    }
+    .article__thumbnail img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+    .article__body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+    }
+    .article__excerpt p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin: 0.8rem 0;
+      line-height: 1.5rem;
+    }
+    .article__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .footer__readmore {
+      font-weight: bold;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .footer__readmore:hover {
+      color: var(--accent-color);
+    }
+    #loadMore {
+      display: block;
+      margin: 3rem auto;
+      padding: 12px 22px;
+      border-radius: 50%;
+      background: var(--accent-color);
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #000;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+    }
+    #loadMore:hover {
+      background: #00c291;
+      transform: scale(1.1);
+    }
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+    footer a {
+      margin: 0 10px;
+      color: var(--accent-color);
+    }
+    @media (max-width: 600px) {
+      .front-blog-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="content-container">
-    <h1 class="header-title">CognitoIndia: A Try For Improvement in Indian Society</h1>
-    <section class="front-blog">
+  <header>
+    <div id="typingEffect">CognitoIndia: A Try For Improvement in Indian Society</div>
+  </header>  <section class="front-blog">
+    <div class="content-container">
       <div class="front-blog-top">
         <h2><i class="bi bi-journal-text"></i> Latest Posts</h2>
         <a class="btn-Fx" href="#"><span>View Blog <i class="bi bi-arrow-right"></i></span></a>
       </div>
-      <div class="front-blog-list">
-        <!-- Card 1 -->
-        <a class="article-blog" href="https://cogitoindia.blogspot.com/2025/06/poem-on-india-1.html">
-          <div class="article__thumbnail">
-            <img src="https://media.istockphoto.com/id/1356149389/photo/young-woman-doing-a-stop-sign-with-her-hand.jpg?s=612x612&w=0&k=20&c=ryKC-KpImGuCUrpF6WEjJSfauFkhvZUvqVgSrFyjYT8=" alt="Poem on India">
-          </div>
-          <div class="article__body">
-            <h3>Poem on India (1)</h3>
-            <div class="article__excerpt">
-              <p>I come from two Indias. One where we worship women during the day and gang-rape them at night. A brutally honest poetic lens on contradictions...</p>
-            </div>
-            <footer class="article__footer">
-              <span>June 5, 2025</span>
-              <div class="footer__readmore">
-                <span>Read more</span><i class="bi bi-arrow-right"></i>
-              </div>
-            </footer>
-          </div>
-        </a><!-- Card 2 -->
-    <a class="article-blog" href="https://jmp.sh/EykAsAJd">
-      <div class="article__thumbnail">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyCxcbTvL6UEilp2_5gp_n7TFRqZb5JcCGPw&s" alt="Research on Death Cases">
+      <div class="front-blog-list" id="blogList">
+        <!-- Cards will be injected by JS -->
       </div>
-      <div class="article__body">
-        <h3>Research on Death Cases in India</h3>
-        <div class="article__excerpt">
-          <p>A harsh, data-backed research exposing India's rising death toll linked to rape and sexual assault cases—unveiling systemic failures, societal silence...</p>
-        </div>
-        <footer class="article__footer">
-          <span>June 12, 2025</span>
-          <div class="footer__readmore">
-            <span>Read more</span><i class="bi bi-arrow-right"></i>
-          </div>
-        </footer>
-      </div>
-    </a>
-  </div>
-</section>
-
-  </div>  <footer class="site-footer">
+      <button id="loadMore">+</button>
+    </div>
+  </section>  <footer>
     <p>Connect with us:</p>
     <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
     <a href="https://x.com" target="_blank"><i class="bi bi-twitter-x"></i></a>
     <a href="https://github.com" target="_blank"><i class="bi bi-github"></i></a>
   </footer>  <script>
-    // Scroll reveal effect for cards
-    const cards = document.querySelectorAll('.article-blog');
-    const revealOnScroll = () => {
-      cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 50) {
-          card.style.opacity = 1;
-          card.style.transform = 'translateY(0)';
-        }
-      });
-    };
-    
-    cards.forEach(card => {
-      card.style.opacity = 0;
-      card.style.transform = 'translateY(30px)';
-      card.style.transition = 'all 0.6s ease-out';
-    });
+    const posts = [
+      {
+        title: "Poem on India (1)",
+        link: "https://cogitoindia.blogspot.com/2025/06/poem-on-india-1.html",
+        image: "https://media.istockphoto.com/id/1356149389/photo/young-woman-doing-a-stop-sign-with-her-hand.jpg?s=612x612&w=0&k=20&c=ryKC-KpImGuCUrpF6WEjJSfauFkhvZUvqVgSrFyjYT8=",
+        date: "June 5, 2025",
+        description: "I come from two Indias. One where we worship women during the day and gang-rape them at night. A brutally honest poetic lens on contradictions..."
+      },
+      {
+        title: "Research on Death Cases in India",
+        link: "https://jmp.sh/EykAsAJd",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyCxcbTvL6UEilp2_5gp_n7TFRqZb5JcCGPw&s",
+        date: "June 12, 2025",
+        description: "A harsh, data-backed research exposing India's rising death toll linked to rape and sexual assault cases—unveiling systemic failures, societal silence..."
+      },
+      // You can add 50+ similar template cards here...
+    ];
 
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
+    let currentCount = 0;
+    const step = 5;
+
+    function loadCards() {
+      const list = document.getElementById("blogList");
+      const end = Math.min(currentCount + step, posts.length);
+
+      for (let i = currentCount; i < end; i++) {
+        const card = document.createElement("a");
+        card.className = "article-blog";
+        card.href = posts[i].link;
+        card.innerHTML = `
+          <div class="article__thumbnail">
+            <img src="${posts[i].image}" alt="${posts[i].title}">
+          </div>
+          <div class="article__body">
+            <h3>${posts[i].title}</h3>
+            <div class="article__excerpt">
+              <p>${posts[i].description}</p>
+            </div>
+            <footer class="article__footer">
+              <span>${posts[i].date}</span>
+              <div class="footer__readmore">
+                <span>Read more</span><i class="bi bi-arrow-right"></i>
+              </div>
+            </footer>
+          </div>
+        `;
+        list.appendChild(card);
+      }
+      currentCount += step;
+      if (currentCount >= posts.length) {
+        document.getElementById("loadMore").style.display = 'none';
+      }
+    }
+
+    document.getElementById("loadMore").addEventListener("click", loadCards);
+    window.onload = loadCards;
   </script></body>
 </html>

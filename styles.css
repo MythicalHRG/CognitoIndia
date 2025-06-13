@@ -26,69 +26,56 @@ body {
 
 header {
   text-align: center;
-  padding: 2rem 1rem;
-}
-
-.search-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-}
-
-#searchInput {
-  width: 0;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid var(--accent-color);
-  border-radius: 5px;
-  outline: none;
-  background-color: var(--bg-card);
-  color: var(--text-light);
-  transition: all 0.5s ease;
-  opacity: 0;
-  visibility: hidden;
-}
-
-#searchInput.show {
-  width: 250px;
-  visibility: visible;
-  opacity: 1;
-}
-
-#searchBtn {
-  background: var(--btn-dark);
-  border: 2px solid var(--accent-color);
-  color: var(--accent-color);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#searchBtn:hover {
-  background: var(--accent-color);
-  color: black;
+  padding: 3rem 1rem 1rem;
 }
 
 .mainHeading {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
+  font-weight: bold;
   word-break: break-word;
-  line-height: 2.4rem;
+  padding: 0 1rem;
 }
 
-.saffron {
-  color: var(--saffron);
+.saffron { color: var(--saffron); }
+.white { color: var(--white); }
+.green { color: var(--green); }
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.white {
-  color: var(--white);
+#searchBtn {
+  background-color: transparent;
+  border: none;
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
 }
 
-.green {
-  color: var(--green);
+#searchInput {
+  display: none;
+  background-color: var(--bg-card);
+  border: 1px solid var(--accent-color);
+  color: var(--text-light);
+  padding: 8px 12px;
+  border-radius: 5px;
+  flex-grow: 1;
+  transition: width 0.3s ease;
+}
+
+#searchInput.show {
+  display: block;
+}
+
+h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-light);
 }
 
 .content-container {
@@ -214,4 +201,16 @@ footer {
 footer a {
   margin: 0 10px;
   color: var(--accent-color);
+}
+
+@media (max-width: 600px) {
+  .front-blog-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .mainHeading {
+    font-size: 1.5rem;
+  }
 }

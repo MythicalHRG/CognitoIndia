@@ -55,50 +55,13 @@ function loadCards() {
 document.getElementById("loadMore").addEventListener("click", loadCards);
 window.onload = loadCards;
 
+// Optional search logic (basic):
 document.getElementById("searchBtn").addEventListener("click", () => {
-  const input = document.getElementById("searchInput");
-  input.classList.toggle("show");
-  input.focus();
-});
+  const query = document.getElementById("searchInput").value.toLowerCase();
+  const cards = document.querySelectorAll(".article-blog");
 
-document.getElementById("searchInput").addEventListener("input", (e) => {
-  const keyword = e.target.value.toLowerCase();
-  const blogList = document.getElementById("blogList");
-  blogList.innerHTML = "";
-  currentCount = 0;
-
-  const filtered = posts.filter(post =>
-    post.title.toLowerCase().includes(keyword) ||
-    post.description.toLowerCase().includes(keyword)
-  );
-
-  filtered.forEach(post => {
-    const card = document.createElement("a");
-    card.className = "article-blog";
-    card.href = post.link;
-    card.innerHTML = `
-      <div class="article__thumbnail">
-        <img src="${post.image}" alt="${post.title}">
-      </div>
-      <div class="article__body">
-        <h3>${post.title}</h3>
-        <div class="article__excerpt">
-          <p>${post.description}</p>
-        </div>
-        <footer class="article__footer">
-          <span>${post.date}</span>
-          <div class="footer__readmore">
-            <span>Read more</span><i class="bi bi-arrow-right"></i>
-          </div>
-        </footer>
-      </div>
-    `;
-    blogList.appendChild(card);
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(query) ? "block" : "none";
   });
-
-  if (filtered.length === 0) {
-    blogList.innerHTML = `<p style="color: gray; text-align: center;">No posts found.</p>`;
-  }
-
-  document.getElementById("loadMore").style.display = "none";
 });

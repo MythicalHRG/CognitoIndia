@@ -55,22 +55,26 @@ function loadCards() {
 document.getElementById("loadMore").addEventListener("click", loadCards);
 window.onload = loadCards;
 
-// Search logic
+// Search logic + toggle animation
 document.getElementById("searchBtn").addEventListener("click", () => {
-  const query = document.getElementById("searchInput").value.toLowerCase();
+  const bar = document.getElementById("searchBar");
+  const input = document.getElementById("searchInput");
+  bar.classList.toggle("open");
+
+  if (bar.classList.contains("open")) {
+    input.focus();
+  } else {
+    input.value = "";
+    document.querySelectorAll(".article-blog").forEach(card => {
+      card.style.display = "block";
+    });
+  }
+
+  const query = input.value.toLowerCase();
   const cards = document.querySelectorAll(".article-blog");
 
   cards.forEach(card => {
     const text = card.innerText.toLowerCase();
     card.style.display = text.includes(query) ? "block" : "none";
   });
-});
-
-// Toggle search bar expansion
-document.getElementById("searchToggle").addEventListener("click", () => {
-  const searchBar = document.getElementById("searchBar");
-  searchBar.classList.toggle("collapsed");
-  if (!searchBar.classList.contains("collapsed")) {
-    document.getElementById("searchInput").focus();
-  }
 });

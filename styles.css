@@ -55,13 +55,17 @@ header {
   border: none;  
   border-radius: 5px;  
   flex-grow: 1;  
-  width: 100%;  
-  max-width: 100%;  
+  width: 200px;  
+  max-width: 600px;  
   font-size: 1rem;  
   background: #1e1e1e;  
   color: var(--text-light);  
-  opacity: 1;  
-  transition: none;  
+  transition: all 0.3s ease;  
+}  
+  
+.search-bar input:focus {  
+  width: 100%;  
+  max-width: 100%;  
 }  
   
 .search-bar input::placeholder {  
@@ -215,4 +219,4 @@ footer a {
     align-items: flex-start;  
     gap: 1rem;  
   }  
-}
+  }

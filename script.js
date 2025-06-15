@@ -55,7 +55,7 @@ function loadCards() {
 document.getElementById("loadMore").addEventListener("click", loadCards);
 window.onload = loadCards;
 
-// Optional search logic (basic):
+// Search logic
 document.getElementById("searchBtn").addEventListener("click", () => {
   const query = document.getElementById("searchInput").value.toLowerCase();
   const cards = document.querySelectorAll(".article-blog");
@@ -64,4 +64,13 @@ document.getElementById("searchBtn").addEventListener("click", () => {
     const text = card.innerText.toLowerCase();
     card.style.display = text.includes(query) ? "block" : "none";
   });
+});
+
+// Toggle search bar expansion
+document.getElementById("searchToggle").addEventListener("click", () => {
+  const searchBar = document.getElementById("searchBar");
+  searchBar.classList.toggle("collapsed");
+  if (!searchBar.classList.contains("collapsed")) {
+    document.getElementById("searchInput").focus();
+  }
 });
